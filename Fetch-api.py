@@ -52,6 +52,12 @@ def fetch():
     # Save to csv file as current date
     name = datetime.now().strftime("%d-%b-%Y")
     data.to_csv(f'Data-Sets/{name}.csv')
+    
+     # Save last update time to a folder
+    update = datetime.now().strftime("%H:%M:%S on %dth %b")
+    file = open("Data-Sets/File update.txt", "w")
+    file.write(f'File last updated at {update}')
+    file.close()
 
 # Run after every 1hr
 while True:
