@@ -1,5 +1,6 @@
-#!/usr/bin/env python
-# coding: utf-8
+#______________
+#Timothy Wangwe
+#==============
 
 # Import 3rd party libraries
 import urllib.request
@@ -52,7 +53,7 @@ def fetch():
     name = datetime.now().strftime("%d-%b-%Y")
     data.to_csv(f'Data-Sets/{name}.csv')
 
-# Run after every 24 hrs
+# Run after every 1hr
 while True:
     fetch()
-    time.sleep(60*60*24)
+    time.sleep(60*60)
