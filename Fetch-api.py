@@ -47,7 +47,6 @@ def fetch():
     cols = DataLib.keys()
 
     data = pd.DataFrame(DataLib, columns = cols)
-    data.head()
 
     # Save to csv file as current date
     name = datetime.now().strftime("%d-%b-%Y")
