@@ -52,6 +52,7 @@ def fetch():
     name = datetime.now().strftime("%d-%b-%Y")
     data.to_csv(f'Data-Sets/{name}.csv')
 
+# Run after every 24 hrs
 while True:
     fetch()
     time.sleep(60*60*24)
