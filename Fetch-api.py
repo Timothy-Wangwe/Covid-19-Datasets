@@ -55,11 +55,12 @@ def fetch():
     
      # Save last update time to a folder
     update = datetime.now().strftime("%H:%M:%S on %dth %b")
-    file = open("Data-Sets/File update.txt", "w")
+    file = open("Data-Sets/Data-update.txt", "w")
     file.write(f'File last updated at {update}')
     file.close()
 
 # Run after every 1hr
 while True:
     fetch()
+    print("First run complete... Next execution after 1 hour")
     time.sleep(60*60)
