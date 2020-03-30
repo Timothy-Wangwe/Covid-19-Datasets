@@ -8,6 +8,7 @@ import json
 import pandas as pd
 from datetime import datetime
 import time
+from AutoGit import auto
 
 def fetch():
     # Fetch data from api
@@ -60,14 +61,7 @@ def fetch():
     file.close()
 
 # Automate Github updates
-def git():
-    from os import system
-
-    system("git pull")
-    system("git add *")
-    system("git commit -m 'Automated hourly dataset update'")
-    system("git push")
-    system("git status")
+auto.git()
 
 # Run after every 1hr
 while True:
