@@ -52,15 +52,28 @@ def fetch():
     # Save to csv file as current date
     name = datetime.now().strftime("%d-%b-%Y")
     data.to_csv(f'Data-Sets/{name}.csv')
-    
+
      # Save last update time to a folder
     update = datetime.now().strftime("%H:%M:%S on %dth %b")
     file = open("Data-Sets/Data-update.txt", "w")
     file.write(f'File last updated at {update}')
     file.close()
 
+# Automate Github updates
+def git():
+    from os import system
+
+    system("git pull")
+    system("git add *")
+    system("git commit -m 'Automated hourly dataset update'")
+    system("git push")
+    system("git status")
+
 # Run after every 1hr
 while True:
     fetch()
-    print("First run complete... Next execution after 1 hour")
+    tim = datetime.now().strftime("%a %I %p")
+    print(f'Last executed at {tim}... Next execution after 1 hour')
+    git()
+    print("Committed to Github")
     time.sleep(60*60)
