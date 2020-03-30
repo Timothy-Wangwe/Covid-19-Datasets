@@ -55,7 +55,7 @@ def fetch():
 
      # Save last update time to a folder
     update = datetime.now().strftime("%H:%M:%S on %dth %b")
-    file = open("Data-Sets/Data-update.txt", "w")
+    file = open("Data-Sets/Readme.md", "w")
     file.write(f'File last updated at {update}')
     file.close()
 
