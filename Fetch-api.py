@@ -73,7 +73,7 @@ def git():
 while True:
     fetch()
     tim = datetime.now().strftime("%a %I %p")
-    print(f'Last executed at {tim}... Next execution after 1 hour')
+    print(f'\n\nLast executed at {tim}... Next execution after 1 hour\n\n\n')
     git()
-    print("Committed to Github")
+    print("\n\n\n\nCommitted to Github\n")
     time.sleep(60*60)
