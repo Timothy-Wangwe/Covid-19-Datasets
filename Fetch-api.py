@@ -51,20 +51,20 @@ def fetch():
     data = pd.DataFrame(DataLib, columns = cols)
 
     # Save to csv file as current date
-    name = datetime.now().strftime("%d-%b-%Y")
-    data.to_csv(f'Data-Sets/{name}.csv')
+    date = datetime.now().strftime("%d-%b-%Y")
+    data.to_csv(f'Data-Sets/{date}.csv')
 
      # Save last update time to a folder
-    update = datetime.now().strftime("%H:%M:%S on %dth %b")
+    now = datetime.now().strftime("%H:%M:%S on %dth %b")
     file = open("Data-Sets/Readme.md", "w")
-    file.write(f'File last updated at {update}')
+    file.write(f'File last updated at {now}')
     file.close()
 
 # Run at 6hr intervals
 while True:
     fetch()
-    tim = datetime.now().strftime("%a %I %p")
-    print(f'\n\nLast executed at {tim}... Next execution after 6 hours\n\n\n')
+    time = datetime.now().strftime("%a %I %p")
+    print(f'\n\nLast executed at {time}... Next execution after 6 hours\n\n\n')
     auto.git()
     print("\n\n\n\nCommitted to Github\n")
-    time.sleep(60*60*6)
+    time.sleep((60*60)*6)
