@@ -60,11 +60,11 @@ def fetch():
     file.write(f'File last updated at {update}')
     file.close()
 
-# Run after every 1hr
+# Run at 6hr intervals
 while True:
     fetch()
     tim = datetime.now().strftime("%a %I %p")
-    print(f'\n\nLast executed at {tim}... Next execution after 1 hour\n\n\n')
+    print(f'\n\nLast executed at {tim}... Next execution after 6 hours\n\n\n')
     auto.git()
     print("\n\n\n\nCommitted to Github\n")
-    time.sleep(60*60)
+    time.sleep(60*60*6)
