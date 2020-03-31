@@ -63,8 +63,8 @@ def fetch():
 # Run at 6hr intervals
 while True:
     fetch()
-    time = datetime.now().strftime("%a %I %p")
-    print(f'\n\nLast executed at {time}... Next execution after 6 hours\n\n\n')
+    tim = datetime.now().strftime("%a %I %p")
+    print(f'\n\nLast executed at {tim}... Next execution after 6 hours\n\n\n')
     auto.git()
     print("\n\n\n\nCommitted to Github\n")
     time.sleep(60*60*6)
