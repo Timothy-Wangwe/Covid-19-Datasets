@@ -55,7 +55,7 @@ def fetch():
     data.to_csv(f'Data-Sets/{date}.csv')
 
      # Save last update time to a folder
-    now = datetime.now().strftime("%H:%M:%S on %dth %b")
+    now = datetime.now().strftime("%H:%M:%S on %dth of %B 2020")
     file = open("Data-Sets/Readme.md", "w")
     file.write(f'File last updated at {now}')
     file.close()
