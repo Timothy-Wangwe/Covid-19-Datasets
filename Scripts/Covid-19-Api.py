@@ -52,12 +52,12 @@ def fetch():
 
     # Save to csv file as current date
     date = datetime.now().strftime("%d-%b-%Y")
-    data.to_csv(f'Data-Sets/{date}.csv')
+    data.to_csv(f'../Data-Sets/Covid-19-Api/{date}.csv')
 
      # Save last update time to a folder
     now = datetime.now().strftime("%H:%M:%S on %dth of %B 2020")
-    file = open("Data-Sets/Readme.md", "w")
-    file.write(f'File last updated at {now}')
+    file = open("../Data-Sets/Covid-19-Api/Readme.md", "w")
+    file.write(f'File automatically updated at {now}.')
     file.close()
 
 # Run at 6hr intervals
