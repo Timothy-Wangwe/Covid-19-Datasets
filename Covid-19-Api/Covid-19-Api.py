@@ -2,6 +2,9 @@
 #Timothy Wangwe
 #==============
 
+# Add module to system path
+import sys
+sys.path.insert("../../Covid-19-Datasets/AutoGit")
 # Import 3rd party libraries
 import urllib.request
 import json
