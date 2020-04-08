@@ -4,7 +4,8 @@
 
 # Add module to system path
 import sys
-sys.path.insert("../../Covid-19-Datasets/AutoGit")
+sys.path.append("../")
+
 # Import 3rd party libraries
 import urllib.request
 import json
@@ -53,15 +54,13 @@ def fetch():
 
     data = pd.DataFrame(DataLib, columns = cols)
 
-    import sys
-    sys.path.append('../..')
     # Save to csv file as current date
     date = datetime.now().strftime("%d-%b-%Y")
-    data.to_csv(f'Covid-19-Datasets/Data-Sets/Covid-19-Api/{date}.csv')
-
-    # Save last update time to a folder
+    data.to_csv(f'../Covid-19-Api/Datasets/{date}.csv')
+    
+     # Save last update time to a folder
     now = datetime.now().strftime("%H:%M:%S on %dth of %B 2020")
-    file = open("Covid-19-Datasets/Data-Sets/Covid-19-Api/Readme.md", "w")
+    file = open("../Covid-19-Api/Datasets/Readme.md", "w")
     file.write(f'File automatically updated at {now}.')
     file.close()
 
